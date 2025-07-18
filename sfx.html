@@ -2,12 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SFX - Acsho</title>
-  <style>body { font-family: sans-serif; }</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound Effects (SFX) - Acsho</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #111;
+    }
+    header {
+      background-color: #111;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .asset {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .asset h2 {
+      margin-top: 0;
+    }
+    .download-btn {
+      background: #111;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .download-count {
+      margin-left: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .back {
+      display: block;
+      text-align: center;
+      margin: 30px 0;
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #fff;
+      color: #777;
+      border-top: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
-  <h1>SFX</h1>
-  <p>Sample content for SFX page.</p>
+  <header>
+    <h1>Sound Effects (SFX)</h1>
+    <p>Download free editing assets instantly</p>
+  </header>
+
+  <div class="container">
+    <div class="asset">
+      <h2>Sample Asset 1</h2>
+      <button class="download-btn" onclick="increment('asset1')">Download</button>
+      <span class="download-count" id="asset1">Downloads: 0</span>
+    </div>
+    <div class="asset">
+      <h2>Sample Asset 2</h2>
+      <button class="download-btn" onclick="increment('asset2')">Download</button>
+      <span class="download-count" id="asset2">Downloads: 0</span>
+    </div>
+    <div class="asset">
+      <h2>Sample Asset 3</h2>
+      <button class="download-btn" onclick="increment('asset3')">Download</button>
+      <span class="download-count" id="asset3">Downloads: 0</span>
+    </div>
+
+    <a href="index.html" class="back">← Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Acsho. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function increment(id) {
+      const counter = document.getElementById(id);
+      let current = parseInt(counter.innerText.replace(/\D/g, '')) || 0;
+      counter.innerText = "Downloads: " + (current + 1);
+    }
+  </script>
 </body>
 </html>
