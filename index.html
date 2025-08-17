@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ACSHO - Video Editing Assets Exchange</title>
+
+  <!-- Professional font imported -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>ACSHO</h1>
+    <input type="text" id="search" placeholder="Search for assets..." />
+  </header>
+
+  <nav id="categories">
+    <a href="?category=all" class="category-btn active">All</a>
+    <a href="?category=davinci" class="category-btn">Davinci</a>
+    <a href="?category=premiere" class="category-btn">Premiere Pro</a>
+    <a href="?category=capcut" class="category-btn">CapCut</a>
+    <a href="?category=sfx" class="category-btn">SFX</a>
+  </nav>
+
+  <main id="assets" aria-live="polite"></main>
+
+  <button id="uploadBtn" onclick="openUploadModal()" aria-label="Upload new asset">&#43;</button>
+
+  <!-- Upload Modal -->
+  <div id="uploadModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="uploadLabel" style="display:none;">
+    <div class="modal-content">
+      <button class="close" aria-label="Close upload form" onclick="closeUploadModal()">&times;</button>
+      <h2 id="uploadLabel">Upload Asset</h2>
+      <input type="text" id="assetNameIn" placeholder="Asset Name" aria-required="true" />
+      <select id="assetCategoryIn" aria-required="true">
+        <option value="davinci">Davinci</option>
+        <option value="premiere">Premiere Pro</option>
+        <option value="capcut">CapCut</option>
+        <option value="sfx">SFX</option>
+      </select>
+      <input type="text" id="assetLinkIn" placeholder="Google Drive Share Link" aria-required="true" />
+      <input type="text" id="uploaderNameIn" placeholder="Your Name" aria-required="true" />
+      <button onclick="addAsset()">Upload</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* Professional monochrome palette with depth */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #121212; /* dark charcoal */
+  color: #eeeeee; /* pale grey */
+}
+
+header {
+  text-align: center;
+  padding: 28px 10px 14px 10px;
+  background: #1c1c1c; /* slightly lighter dark */
+  box-shadow: inset 0 -1px 4px #222;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 3em;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+#search {
+  padding: 10px 14px;
+  width: 60%;
+  max-width: 500px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #ddd;
+}
+
+nav#categories {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  background: #222;
+  padding: 12px 0;
+  box-shadow: inset 0 -1px 2px #111;
+}
+
+.category-btn {
+  color: #ddd;
+  text-decoration: none;
+  padding: 8px 26px;
+  border-radius: 24px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1.8px solid transparent;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: #eeeeee;
+  color: #121212;
+  border-color: #fafafa;
+  box-shadow: 0 0 6px 1px #fff8;
+}
+
+main#assets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+  padding: 24px 16px 100px 16px;
+  min-height: 50vh;
+}
+
+.asset-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #ddd;
+  box-shadow: 0 0 6px 1px #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* changed from space-between */
+  gap: 6px; /* reduce space between elements */
+  max-height: 130px; /* limit max height */
+  overflow: hidden; /* prevent extra space */
+}
+
+.asset-card:hover {
+  box-shadow: 0 0 12px 2px #616161;
+}
+
+.asset-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.15em;
+  color: #fafafa;
+  line-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.asset-category {
+  font-weight: 700;
+  font-size: 0.75em;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  margin-bottom: 4px;
+}
+
+.asset-uploader {
+  font-size: 0.75em;
+  color: #999;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.asset-card button {
+  align-self: flex-start;
+  font-weight: 600;
+  padding: 5px 14px;
+  font-size: 0.85em;
+  border-radius: 5px;
+  border: none;
+  background: #eeeeee;
+  color: #121212;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+  margin-top: 0;
+}
+
+.asset-card button:hover {
+  background: #ccc;
+}
+
+/* Upload Floating Button */
+#uploadBtn {
+  position: fixed;
+  right: 26px;
+  bottom: 25px;
+  width: 56px;
+  height: 56px;
+  font-size: 2.4em;
+  background: #ececec;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 3px 14px #000a;
+  cursor: pointer;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+#uploadBtn:hover {
+  background: #bbb;
+  color: #121212;
+  outline: 2px solid #eee;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(18, 18, 18, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #222;
+  color: #eee;
+  padding: 32px 40px 32px 40px;
+  border-radius: 8px;
+  max-width: 360px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px 14px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: #333;
+  color: #eee;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  background: #fafafa;
+  color: #222;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background: #eee;
+}
+
+.close {
+  color: #eee;
+  font-size: 2.4em;
+  position: absolute;
+  right: 22px;
+  top: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  user-select: none;
+}
